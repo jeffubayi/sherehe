@@ -23,8 +23,8 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 The following tools were used to develop:
 
-- [JOY UI]([https://nextjs.org/docs](https://mui.com/joy-ui/getting-started/)) - component library.
-- [MUI Icons]([https://nextjs.org/learn](https://mui.com/material-ui/material-icons/?query=party)) - an interactive Next.js tutorial.
+- [joy-ui](https://mui.com/joy-ui/getting-started/) - material ui component library.
+- [material-icons](https://mui.com/material-ui/material-icons/?query=party) - an interactive Next.js tutorial.
 - [googlemaps](https://www.npmjs.com/package/@googlemaps/react-wrapper) - React Google maps wrapper
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
