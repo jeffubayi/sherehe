@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 import Button from '@mui/joy/Button';
 import FormControl from '@mui/joy/FormControl';
