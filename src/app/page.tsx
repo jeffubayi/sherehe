@@ -1,95 +1,91 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"
+
+import * as React from 'react';
+import Box from '@mui/joy/Box';
+import Stack from '@mui/joy/Stack';
+
+import RentalCard from '@/components/RentalCard';
+import HeaderSection from '@/components/HeaderSection';
+import Search from '@/components/Search';
+import Filters from '@/components/Filters';
+import Pagination from '@/components/Pagination';
+import GoogleMaps from '@/components/GoogleMap';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      <Box
+        component="main"
+        sx={{
+          height: 'calc(100vh - 55px)',
+          display: 'grid',
+          gridTemplateColumns: { xs: 'auto', md: '60% 40%' },
+          gridTemplateRows: 'auto 1fr auto',
+          backgroundColor: 'background.surface',
+        }}
+      >
+        <Stack
+          sx={{
+            backgroundColor: 'background.surface',
+            px: { xs: 2, md: 4 },
+            py: 2,
+            borderBottom: '1px solid',
+            borderColor: 'divider',
+          }}
+        >
+          <HeaderSection />
+          <Search />
+        </Stack>
+        <Box
+          sx={{
+            gridRow: 'span 3',
+            display: { xs: 'none', md: 'flex' },
+          }}
+        >
+          <GoogleMaps/>
+        </Box>
+        <Stack spacing={2} sx={{ px: { xs: 2, md: 4 }, pt: 2, minHeight: 0 }}>
+          <Filters />
+          <Stack spacing={2} sx={{ overflow: 'auto' }}>
+            <RentalCard
+              title="A Stylish Apt, 5 min walk to Queen Victoria Market"
+              category="Entire apartment rental in Collingwood"
+              rareFind
+              image="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=400"
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <RentalCard
+              title="Designer NY style loft"
+              category="Entire loft in central business district"
+              liked
+              image="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400"
+            />
+            <RentalCard
+              title="5 minute walk from University of Melbourne"
+              category="Entire rental unit in Carlton"
+              image="https://images.unsplash.com/photo-1537726235470-8504e3beef77?auto=format&fit=crop&w=400"
+            />
+            <RentalCard
+              title="Magnificent apartment next to public transport"
+              category="Entire apartment rental in Collingwood"
+              image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=400"
+            />
+            <RentalCard
+              title="Next to shoppng mall and public transport"
+              category="Entire apartment rental in Collingwood"
+              image="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=400"
+            />
+            <RentalCard
+              title="Endless ocean view"
+              category="A private room in a shared apartment in Docklands"
+              image="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=400"
+            />
+            <RentalCard
+              title="A Stylish Apt, 5 min walk to Queen Victoria Market"
+              category="one bedroom apartment in Collingwood"
+              image="https://images.unsplash.com/photo-1481437156560-3205f6a55735?auto=format&fit=crop&w=400"
+            />
+          </Stack>
+        </Stack>
+        <Pagination />
+      </Box>
   );
 }
