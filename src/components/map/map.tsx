@@ -19,7 +19,7 @@ interface MapProps extends Exclude<google.maps.MapOptions, "center"> {
   onDragStart?: (event: google.maps.FeatureMouseEvent) => void;
 }
 
-const MapComponent: FC<PropsWithChildren<MapProps>> = ({
+const MapComponent: FC<PropsWithChildren<any>> = ({
   children,
   center,
   zoom = 12,
@@ -82,8 +82,6 @@ const MapWrapper: FC<PropsWithChildren<MapWrapperProps>> = ({
 }) => {
   return (
     <Wrapper
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //  @ts-ignore
       version="beta"
       libraries={["marker"]}
       apiKey=""

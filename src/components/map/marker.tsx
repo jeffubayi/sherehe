@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect, memo } from "react";
 
 interface MarkerProps extends google.maps.MarkerOptions {
   onClick?: (event: google.maps.FeatureMouseEvent) => void;
   onDragEnd?: (event: google.maps.FeatureMouseEvent) => void;
+  position?:any;
+  key?:any;
 }
 
 const Marker: React.FC<MarkerProps> = ({ onClick, onDragEnd, ...options }) => {
